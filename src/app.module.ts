@@ -5,13 +5,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { PropertiesModule } from './properties/properties.module';
+import { RentsModule } from './rents/rents.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.DB_HOST),
     UsersModule,
-    PropertiesModule
+    PropertiesModule,
+    RentsModule
   
   ],
   controllers: [AppController],
