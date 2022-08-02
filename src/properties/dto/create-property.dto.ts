@@ -1,4 +1,5 @@
 export class CreatePropertyDto {
+    _id?: string;
     status: string;
     label: string;
     images: string[];

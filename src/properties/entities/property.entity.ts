@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { Document } from 'mongoose';
+import mongoose, { Document, Types } from 'mongoose';
+import { Rent } from 'src/rents/entities/rent.entity';
 import { User } from 'src/users/entities/user.entity';
 
 export enum PropertyStatus {
@@ -38,14 +39,18 @@ export class Property {
   images: string[];
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-  user_id: User;
+  // user_id: User;
+  user_id: Types.ObjectId;
 
+  @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'Rent' }])
+  // rents: Rent;
+  rents: [Types.ObjectId];
 
   @Prop({
     type: AddressProperty,
     default: {},
   })
-  address: AddressProperty
+  address: AddressProperty;
 
   @Prop({ default: true })
   active: boolean;
