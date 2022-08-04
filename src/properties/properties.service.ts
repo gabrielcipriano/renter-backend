@@ -20,6 +20,7 @@ export class PropertiesService {
   }
 
   async findAll() {
+    console.log('Baiteo no all')
     const properties = await this.propertyModel.find().populate('rents');
 
     // const rentsFromProperty = await this.rentService.findByPropertyId()
@@ -50,7 +51,7 @@ export class PropertiesService {
     return updatedProperty;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} property`;
+  async remove(id: string   ) {
+   return await this.propertyModel.deleteOne({_id: id}).exec();
   }
 }

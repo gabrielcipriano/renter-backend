@@ -4,10 +4,10 @@ import { Rent } from 'src/rents/entities/rent.entity';
 import { User } from 'src/users/entities/user.entity';
 
 export enum PropertyStatus {
-  RENTED = 'rented',
-  AVAILABLE = 'available',
-  MAINTENANCE = 'maintenance',
-  DISABLED = 'disabled',
+  RENTED = 0,
+  AVAILABLE = 1,
+  MAINTENANCE = 2,
+  DISABLED = 3,
 }
 
 export type PropertyDocument = Property & Document;
@@ -30,7 +30,7 @@ class AddressProperty extends Document {
 @Schema()
 export class Property {
   @Prop({ enum: PropertyStatus, default: PropertyStatus.AVAILABLE })
-  status: string;
+  status: number;
 
   @Prop()
   label: string;

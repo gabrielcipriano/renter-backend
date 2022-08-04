@@ -37,6 +37,6 @@ export class PropertiesController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.propertiesService.remove(+id);
+    return this.propertiesService.remove(id);
   }
 }

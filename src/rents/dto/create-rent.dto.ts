@@ -2,7 +2,7 @@ export class CreateRentDto {
   property_id: string;
   date_init: string;
   date_end: string;
-  status: string;
+  status: number;
   client: {
     name: string;
     phone: string;
@@ -10,5 +10,5 @@ export class CreateRentDto {
   total_value: number;
   value_installments: number;
   installments: number;
-  mode: string;
+  mode: number;
 }

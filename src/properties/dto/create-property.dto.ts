@@ -1,6 +1,6 @@
 export class CreatePropertyDto {
     _id?: string;
-    status: string;
+    status: number;
     label: string;
     images: string[];
     user_id: string; // remover depois fazer com o auth no service
